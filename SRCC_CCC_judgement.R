@@ -22,7 +22,7 @@ d <- GSE18044_log2
 cormatrix_GSE18044_SRCC <- rcorr(as.matrix(d), type='spearman')
 cordata_GSE18044_SRCC <-  melt(cormatrix_GSE18044_SRCC$r)
 
-ggplot(cordata_GSE18044_ps, aes(x=Var1, y=Var2, fill=value)) + 
+ggplot(cordata_GSE18044_SRCC, aes(x=Var1, y=Var2, fill=value)) + 
   scale_fill_gradientn(limits = c(-1,1), 
                        colours=c("red","black", "white")) +
   geom_tile() + xlab("") + ylab("") + 
